@@ -1,8 +1,8 @@
 import React from 'react'
 import styled, {ThemeProvider} from 'styled-components'
 import { Outlet } from 'react-router-dom'
-import SideBar from './SideBar'
-import Main from './Main'
+import SideBar from '../components/SideBar'
+import Main from '../components/Main'
 
 
 const Wrapper = styled.div `

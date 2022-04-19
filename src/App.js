@@ -1,6 +1,6 @@
 import React, {Suspense} from 'react'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import Layout from './components/Layout'
+import Layout from './layout/Layout'
 import routes from './routes/routes'
 import { Provider } from 'react-redux'
 import store from './redux/store'
