@@ -14,15 +14,20 @@ const Wrapper = styled.nav`
 	border-right: 1px solid #d2d2d2;
 	padding-top: 5%;
 	font-weight: bold;
-	@media screen and (max-width: 666px) {
-        border-bottom: 1px solid ${props => props.theme.colorLightGrey};
-        max-width: 100%;
+	background-color: ${props => props.theme.bgColorLightGrey};
+    @media screen and (max-width: 666px) {
+		flex-basis: 0;
+        flex-grow: none;
+        border-right: none;
+		border-bottom: 1px solid ${props => props.theme.colorLightGrey};
+		min-width: 100%;
+		z-index: 5;
 	}
 `
 
 const Logo = styled.h1`
-	padding: 0 5% 0 15%;
-	margin-top: 0;
+	padding: 0 5% 5% 15%;
+    margin: 0;
 	font-size: ${props => props.theme.headerFontSize};
 	font-weight: bold;
 	color: ${props => props.theme.colorBlue};
@@ -39,10 +44,11 @@ const Ul = styled.ul`
 	padding: 0;
 	margin: 0;
 	@media screen and (max-width: 666px) {
+        overflow: hidden;
         max-height: 0;
-        transition: all .5s;
+        transition: max-height .5s;
+        margin-bottom: .5em;
         &.dropdown {
-            padding-bottom: 1em;
             max-height: 10em;
         }
 	}
@@ -99,6 +105,7 @@ function SideBar() {
 						name={e.name}
 						Icon={e.Icon}
 						key={e.name}
+                        setDropDown={setDropDown}
 					></NavLink>
 				))}
 			</Ul>

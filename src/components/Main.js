@@ -11,13 +11,17 @@ const Wrapper = styled.main`
 	flex-basis: 12em;
 	flex-direction: column;
 	padding: 0 0 0 0;
+	overflow: auto;
 	background-color: ${props => props.theme.bgColorLightGrey};
 	@media screen and (max-width: 666px) {
+		flex-basis: 0;
+        flex-grow: none;
 		max-width: 100%;
 	}
 `
 const Footer = styled.footer `
 	display: flex;
+    align-items: center;
 	justify-content: space-between;
 	padding: 1.5em 1.5em;
 	margin: auto 0 0 2em;

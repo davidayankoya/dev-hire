@@ -22,10 +22,9 @@ const shake = keyframes`
 const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
-	min-width: 11.5em;
+	flex-basis: 12.5em;
 	max-height: 14em;
 	margin: 0 2em 2em 0;
-	position: relative;
 	border-radius: 8px;
 	box-shadow: 0em 0em 1em ${props => props.theme.colorLightGrey};
 	background-color: white;
@@ -35,6 +34,10 @@ const Wrapper = styled.div`
 	}
 	&.active {
 		animation: 0.5s ${shake} ease-in;
+	}
+	@media screen and (max-width: 666px) {
+		flex-grow: 1;
+		margin: 0 0 2em 0;
 	}
 `
 const Header = styled.div`
@@ -119,9 +122,7 @@ const Hire = styled.div`
 function ProfileModal({ id, header, avatar, name, currency, price, favorite }) {
 	const dispatch = useDispatch()
 	const defaultAvatar = () => {
-		if (avatar === 'https://d17meyd56oy0jr.cloudfront.net/default.png') {
-			return true
-		}
+		if (avatar === 'https://d17meyd56oy0jr.cloudfront.net/default.png') return true
 		return false
 	}
 	const [active, setActive] = useState(false)
